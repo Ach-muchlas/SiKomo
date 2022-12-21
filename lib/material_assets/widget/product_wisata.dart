@@ -3,19 +3,19 @@ import 'package:sikomo/material_assets/color/colors.dart';
 import 'package:sikomo/material_assets/font/typography.dart';
 
 class ProductWisata extends StatelessWidget {
+  final String imageUrl;
+  final String name;
+  final String rating;
+  final String price;
+  final Function()? onTap;
+
   const ProductWisata(
       {super.key,
-      required this.assetImage,
-      required this.placeName,
+      required this.imageUrl,
+      required this.name,
       required this.rating,
       required this.price,
       this.onTap});
-
-  final String assetImage;
-  final String placeName;
-  final String rating;
-  final Function()? onTap;
-  final String price;
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +28,7 @@ class ProductWisata extends StatelessWidget {
         width: 169,
         decoration: BoxDecoration(
             image: DecorationImage(
-                image: NetworkImage(assetImage), fit: BoxFit.cover),
+                image: NetworkImage(imageUrl), fit: BoxFit.cover),
             borderRadius: BorderRadius.circular(20),
             boxShadow: const [
               BoxShadow(
@@ -44,8 +44,8 @@ class ProductWisata extends StatelessWidget {
             Positioned(
               left: 10,
               child: Text(
-                placeName,
-                style: Typograph.regulerMedium.copyWith(color: Colors.white),
+                name,
+                style: Typograph.regulerSmall.copyWith(color: Colors.white),
               ),
             ),
 
@@ -60,23 +60,23 @@ class ProductWisata extends StatelessWidget {
 
             // rating of product
             Positioned(
-                right: 0,
-                height: 50,
-                child: Container(
-                  width: 40,
-                  height: 42,
-                  alignment: Alignment.center,
-                  decoration: const BoxDecoration(
-                      color: Colour.yellow,
-                      borderRadius: BorderRadius.only(
-                          bottomLeft: Radius.circular(15),
-                          topRight: Radius.circular(15))),
-                  child: Text(
-                    rating,
-                    style:
-                        Typograph.regulerMedium.copyWith(color: Colors.white),
-                  ),
-                )),
+              right: 0,
+              height: 50,
+              child: Container(
+                width: 40,
+                height: 42,
+                alignment: Alignment.center,
+                decoration: const BoxDecoration(
+                    color: Colour.yellow,
+                    borderRadius: BorderRadius.only(
+                        bottomLeft: Radius.circular(15),
+                        topRight: Radius.circular(15))),
+                child: Text(
+                  rating,
+                  style: Typograph.regulerMedium.copyWith(color: Colors.white),
+                ),
+              ),
+            ),
           ],
         ),
       ),

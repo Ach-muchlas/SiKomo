@@ -27,7 +27,7 @@ class Typograph {
       .copyWith(fontSize: 16.0, fontWeight: FontWeight.w400);
 
   static final regulerSmall = GoogleFonts.poppins()
-      .copyWith(fontSize: 12.0, fontWeight: FontWeight.w400);
+      .copyWith(fontSize: 14.0, fontWeight: FontWeight.w400);
 
   //font untuk huruf italic
   static final regulerItalic = GoogleFonts.poppins().copyWith(

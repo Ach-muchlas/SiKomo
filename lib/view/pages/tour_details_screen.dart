@@ -45,14 +45,7 @@ class TourDetailsScreen extends StatelessWidget {
                       BoxShadow(
                           blurRadius: 5,
                           color: Color.fromARGB(255, 223, 211, 211))
-                    ],
-                    // image: DecorationImage(
-                    //     image:
-                    //     // NetworkImage(
-                    //     //     'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0a/29/04/2b/eyeemfiltered1451116519411.jpg?w=1200&h=-1&s=1'
-                    //     //     ),
-                    //     fit: BoxFit.fill,
-                    //     opacity: 10)
+                    ],                                        
                   ),
                   child: Image.network(
                     imagebackground,
@@ -110,7 +103,7 @@ class TourDetailsScreen extends StatelessWidget {
                   // icons location
                   child: IconButton(
                     onPressed: () {
-                      // maps function on tap
+                      // maps function on tap                      
                       onTapIconsLocation;
                     },
                     icon: const Icon(
