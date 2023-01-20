@@ -10,13 +10,12 @@ void main() {
     MaterialApp(
       title: 'Sikomo',
       debugShowCheckedModeBanner: false,      
-      initialRoute: '/Onboarding',
+      initialRoute: '/Loading',
       routes: {
-        '/Onboarding': (context) => const OnBoardingScreen(),
+        // '/Onboarding': (context) => const OnBoardingScreen(),
         '/Loading' :(context) => const SplashScreen(),
         '/Home' :(context) => const HomeScreen(),        
-      },            
-      // home: HomeScreen(),
+      },                  
     ),
   );
 }

@@ -5,11 +5,12 @@ import 'package:sikomo/material_assets/font/typography.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
 class TourDetailsScreen extends StatelessWidget {
-  const TourDetailsScreen(
+   const TourDetailsScreen(
       {super.key,
       required this.imagebackground,
       required this.title,
       required this.desciption,
+      required this.rating,
       required this.location,
       required this.jam,
       required this.price,
@@ -20,6 +21,7 @@ class TourDetailsScreen extends StatelessWidget {
   final String imagebackground;
   final String title;
   final String desciption;
+  final String rating;
   final String location;
   final String jam;
   final String fasilitas_1;
@@ -29,7 +31,6 @@ class TourDetailsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const double _userRating = 3.0;
     return Scaffold(
       body: SafeArea(
         child: ListView(
@@ -45,7 +46,7 @@ class TourDetailsScreen extends StatelessWidget {
                       BoxShadow(
                           blurRadius: 5,
                           color: Color.fromARGB(255, 223, 211, 211))
-                    ],                                        
+                    ],
                   ),
                   child: Image.network(
                     imagebackground,
@@ -103,7 +104,7 @@ class TourDetailsScreen extends StatelessWidget {
                   // icons location
                   child: IconButton(
                     onPressed: () {
-                      // maps function on tap                      
+                      // maps function on tap
                       onTapIconsLocation;
                     },
                     icon: const Icon(
@@ -124,13 +125,13 @@ class TourDetailsScreen extends StatelessWidget {
 
             // tour data information
             Container(
-              margin: const EdgeInsets.only(left: 15, right: 15),              
+              margin: const EdgeInsets.only(left: 15, right: 15),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   // title of content
-                  Text(title,                  
+                  Text(title,
                       style: Typograph.semiBoldLarge
                           .copyWith(color: Colors.black)),
 
@@ -139,7 +140,7 @@ class TourDetailsScreen extends StatelessWidget {
 
                   // Rating star
                   RatingBarIndicator(
-                    rating: _userRating,
+                    rating: double.parse(rating),
                     itemBuilder: (context, index) {
                       return const Icon(
                         Icons.star,
